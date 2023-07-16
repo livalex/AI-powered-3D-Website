@@ -62,7 +62,7 @@ const Customizer = () => {
         }),
       });
       if (!response.ok) {
-        alert('Billing hard limit has been reached');
+        alert("Billing hard limit has been reached");
         setPrompt("");
       } else {
         const data = await response.json();
@@ -70,7 +70,7 @@ const Customizer = () => {
         handleDecals(type, `data:image/png;base64,${data.photo}`);
       }
     } catch (error) {
-      alert('Billing hard limit has been reached');
+      alert("Billing hard limit has been reached");
     } finally {
       setGeneratingImg(false);
       setActiveEditorTab("");
@@ -162,6 +162,17 @@ const Customizer = () => {
                 handleClick={() => handleActiveFilterTab(tab.name)}
               />
             ))}
+            <div
+              key='download'
+              className={`tab-btn rounded-4`}
+              onClick={downloadCanvasToImage}
+            >
+              <img
+                src={download}
+                alt="download"
+                className='"w-11/12 h-11/12 object-contain"'
+              />
+            </div>
           </motion.div>
         </>
       )}
