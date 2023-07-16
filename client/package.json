@@ -1,18 +1,22 @@
 {
   "name": "ai-powered-3d-website",
+  "homepage": "https://www.livadaru-3dweb.com",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-three/drei": "^9.78.1",
-    "@react-three/fiber": "^8.13.4",
+    "@react-three/drei": "^9.78.2",
+    "@react-three/fiber": "^8.13.5",
     "framer-motion": "^10.12.18",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-color": "^2.19.3",
     "react-dom": "^18.2.0",
