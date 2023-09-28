@@ -112,6 +112,14 @@ const Customizer = () => {
     });
   };
 
+  const handleTabSelect = (tabName) => {
+    if (activeEditorTab === tabName) {
+      setActiveEditorTab("");
+    } else {
+      setActiveEditorTab(tabName);
+    }
+  };
+
   return (
     <AnimatePresence>
       {!snap.intro && (
@@ -127,7 +135,7 @@ const Customizer = () => {
                   <Tab
                     key={tab.name}
                     tab={tab}
-                    handleClick={() => setActiveEditorTab(tab.name)}
+                    handleClick={() => handleTabSelect(tab.name)}
                   />
                 ))}
                 {generateTabContent()}
